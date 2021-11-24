@@ -6,10 +6,6 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
-
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -49,7 +45,7 @@ class _MyAppState extends State<HomeScreen> {
                 Container(
                   height:60,
                   width: double.infinity,
-                  // color: Colors.grey,
+
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -81,7 +77,6 @@ class _MyAppState extends State<HomeScreen> {
                   ),
                 ),
 
-                // new complaint && result per page
                 Container(
                   color: Colors.white,
                   height:60,

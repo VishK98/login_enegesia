@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:login_energasia/src/view/screen/home_screen.dart';
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // appBar: AppBar(
-        //   title: Text('Validation Form'),
-        // ),
+
         body: MyCustomForm(),
       ),
     );
