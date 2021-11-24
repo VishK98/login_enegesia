@@ -75,11 +75,15 @@ class MyCustomFormState extends State<MyCustomForm> {
                             )
                         ),
                         validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please enter some text';
+                          if(value!.isEmpty)
+                          {
+                          return 'Please Enter Email';
+                          }
+                          if(!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)){
+                          return 'Please a valid Email';
                           }
                           return null;
-                        },
+                          },
                       ),
                     ),
                     Container(
@@ -106,18 +110,23 @@ class MyCustomFormState extends State<MyCustomForm> {
 
                         ),
                         validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Please enter some text';
+                          if(value!.isEmpty)
+                          {
+                          return 'Please Enter Password';
+                          }
+                          if(!RegExp("[a-zA-Z0-9+_.-]").hasMatch(value)){
+                          return 'Please a valid Password';
                           }
                           return null;
-                        },
+                          },
+
                       ),
                     ),
                     FlatButton(
                       onPressed: (){},
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
+                        children: const [
                           Text('Forgot Password',
                             style: TextStyle(color: Colors.white,fontSize: 15),)
                         ],
