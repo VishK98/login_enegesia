@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:login_energasia/src/view/screen/fourth_screen.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -20,6 +21,7 @@ class _MyAppState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           backgroundColor: Colors.grey[300] ,
@@ -42,7 +44,7 @@ class _MyAppState extends State<HomeScreen> {
             child: Column(
               children: [
                 //filter && sort
-                Container(
+                SizedBox(
                   height:60,
                   width: double.infinity,
 
@@ -57,7 +59,7 @@ class _MyAppState extends State<HomeScreen> {
                           icon: const Icon(Icons.filter_alt_outlined, color: Colors.black,),
                           label: const Text("Filter", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),), //label text
                           style: ElevatedButton.styleFrom(
-                              primary: Colors.white //elevated btton background color
+                              primary: Colors.white //elevated background color
                           ),
                         ),
                       ),
@@ -76,6 +78,8 @@ class _MyAppState extends State<HomeScreen> {
                     ],
                   ),
                 ),
+
+
 
                 Container(
                   color: Colors.white,
@@ -107,7 +111,48 @@ class _MyAppState extends State<HomeScreen> {
                   ),
                 ),
 
-                //data
+                SizedBox(
+                  height:30,
+                  width: double.infinity,
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                        height:20, //height of button
+                        width:100,
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: const Icon(Icons.arrow_back_ios, color: Colors.black,size: 17,),
+                          label: const Text("Back", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),), //label text
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.white //elevated background color
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height:20, //height of button
+                        width:100,
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const FourthScreen()),
+                            );
+                          },
+                          label: const Text("Next", style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),), //label text
+                          icon: const Icon(Icons.arrow_forward_ios_sharp, color: Colors.black,size: 17,),
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.white //elevated button background color
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
                 ListView.builder(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), itemCount: 4, itemBuilder: (context, position) {
                   return (
                       Column(
@@ -131,7 +176,13 @@ class _MyAppState extends State<HomeScreen> {
                                   child: ElevatedButton(
                                     child: const Text('Resolve',
                                         style: TextStyle(color: Colors.green)),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      // Navigator.push(
+                                      //   context,
+                                      //   MaterialPageRoute(builder: (context) => const FourthScreen()),
+                                      // );
+                                      //Navigator.of(context).pushNamed('/dashboard');
+                                    },
                                     style: ElevatedButton.styleFrom(
                                       primary: Colors.white,
                                       side: const BorderSide(

@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_energasia/src/view/screen/home_screen.dart';
+import 'package:login_energasia/src/view/screen/splash_screen.dart';
 
-class MyApp extends StatelessWidget {
+import 'fourth_screen.dart';
+
+class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -149,6 +152,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                               context,
                               MaterialPageRoute(builder: (context) => const HomeScreen()),
                             );
+                            //Navigator.of(context).pushNamed('/loginscreen');
                             Scaffold.of(context)
                                 .showSnackBar(const SnackBar(content: Text('Data is in processing.')));
                           }
